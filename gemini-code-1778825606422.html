@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotekatt | Project Hub</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #238636;
+            --hover-color: #2ea043;
+            --border-color: #30363d;
+            --header-text: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 480px;
+            width: 100%;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 0.5rem;
+            color: var(--header-text);
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: #8b949e;
+        }
+
+        .section-label {
+            text-align: left;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #8b949e;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9rem 1.2rem;
+            text-decoration: none;
+            color: var(--header-text);
+            background-color: #21262d;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: all 0.2s ease-in-out;
+            font-weight: 500;
+        }
+
+        .link-card:hover {
+            background-color: #262c36;
+            border-color: var(--accent-color);
+            transform: scale(1.02);
+        }
+
+        .link-card::after {
+            content: '→';
+            font-size: 1.1rem;
+            color: var(--accent-color);
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #484f58;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bibliotekatt</h1>
+        <p class="subtitle">UX Design & Research Documentation</p>
+
+        <div class="links-container">
+            
+            <div class="section-label">Main Portfolio</div>
+            <a href="https://bibliotekatt.github.io/UX" class="link-card">
+                UX Design Overview
+            </a>
+
+            <div class="section-label">Case Studies & Projects</div>
+            <a href="https://bibliotekatt.github.io/UX/castellano_inmobiliarias.html" class="link-card">
+                UX: Castellano Inmobiliarias
+            </a>
+            
+            <a href="https://bibliotekatt.github.io/UX/ellucian-sketchnote-4" class="link-card">
+                Ellucian Sketchnote 4
+            </a>
+
+            <a href="https://bibliotekatt.github.io/SMST/" class="link-card">
+                SMST Project
+            </a>
+        </div>
+
+        <footer>
+            Built with GitHub Pages • 2026
+        </footer>
+    </div>
+
+</body>
+</html>
