@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sketchnote · Student Enrolment Journey · Ellucian Banner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono:wght@400;600&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Roboto', sans-serif; background: #fdf6e3; min-height: 100vh; padding: 0 0 80px 0; }
+    h1, h2, h3 { font-family: 'Roboto Slab', serif; }
+    .font-caveat { font-family: 'Caveat', cursive; }
+    .font-mono-roboto { font-family: 'Roboto Mono', monospace; }
+    .font-condensed { font-family: 'Roboto Condensed', sans-serif; }
+    .sketch-card {
+      background: white;
+      border: 2.5px solid #1c1917;
+      border-radius: 4px;
+      padding: 14px 16px;
+      box-shadow: 3px 3px 0 #1c1917;
+      position: relative;
+    }
+    .highlight-yellow { background: #fef08a; padding: 1px 4px; }
+    .highlight-red { background: #fecaca; padding: 1px 4px; }
+    .highlight-blue { background: #bfdbfe; padding: 1px 4px; }
+    .highlight-green { background: #bbf7d0; padding: 1px 4px; }
+    .bubble {
+      background: #eff6ff;
+      border: 2px solid #3b82f6;
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 17px;
+      font-family: 'Caveat', cursive;
+      position: relative;
+    }
+    .bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 20px;
+      border: 8px solid transparent;
+      border-top-color: #3b82f6;
+    }
+    .burst {
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      background: #dc2626;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .dashed-box {
+      border: 2.5px dashed #9ca3af;
+      border-radius: 8px;
+      padding: 10px 14px;
+      background: #f9fafb;
+    }
+    @keyframes wobble {
+      0%, 100% { transform: rotate(-1deg); }
+      50% { transform: rotate(1deg); }
+    }
+    .wobble { animation: wobble 3s ease-in-out infinite; }
+    .mono-error {
+      background: #1c1917;
+      color: #fca5a5;
+      padding: 14px 18px;
+      border-radius: 6px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 13px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0;">
+  <defs>
+    <filter id="roughen" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" seed="5"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<div style="max-width:860px; margin:0 auto; padding:0 24px;">
+
+  <!-- TITLE -->
+  <div style="text-align:center; padding:40px 0 24px;">
+    <div style="display:inline-block; transform:rotate(-1.5deg);">
+      <div class="sketch-card" style="background:#1c1917; color:#fdf6e3; border-color:#1c1917; box-shadow:5px 5px 0 #9ca3af;">
+        <div style="font-size:11px; letter-spacing:3px; opacity:0.6; margin-bottom:4px; font-family:'Roboto Condensed',sans-serif; text-transform:uppercase;">USER JOURNEY · ELLUCIAN BANNER</div>
+        <h1 style="font-family:'Roboto Slab',serif; font-size:32px; font-weight:700; margin:0 0 4px; line-height:1.2;">😤 Why Can't I Enrol?</h1>
+        <p style="font-size:15px; opacity:0.75; margin:0; font-family:'Roboto',sans-serif; font-weight:400;">A student's painful journey through a broken system</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAST OF CHARACTERS -->
+  <div style="display:flex; gap:16px; margin-bottom:40px; justify-content:center; flex-wrap:wrap;">
+    <div style="transform:rotate(-1deg);">
+      <div class="sketch-card" style="background:#eff6ff; border-color:#3b82f6; box-shadow:3px 3px 0 #3b82f6; text-align:center; min-width:120px;">
+        <div style="font-size:28px;">🎓</div>
+        <div style="font-size:16px; font-weight:700; color:#3b82f6; font-family:'Roboto Slab',serif;">Sam</div>
+        <div style="font-size:12px; color:#6b7280; font-family:'Roboto Condensed',sans-serif;">2nd Year Student</div>
+      </div>
+    </div>
+    <div style="transform:rotate(1deg);">
+      <div class="sketch-card" style="background:#fff7ed; border-color:#f97316; box-shadow:3px 3px 0 #f97316; text-align:center; min-width:120px;">
+        <div style="font-size:28px;">🖥️</div>
+        <div style="font-size:16px; font-weight:700; color:#f97316; font-family:'Roboto Slab',serif;">DegreeWorks + Banner</div>
+        <div style="font-size:12px; color:#6b7280; font-family:'Roboto Condensed',sans-serif;">The Systems</div>
+      </div>
+    </div>
+    <div style="transform:rotate(-1deg);">
+      <div class="sketch-card" style="background:#f5f3ff; border-color:#8b5cf6; box-shadow:3px 3px 0 #8b5cf6; text-align:center; min-width:120px;">
+        <div style="font-size:28px;">📋</div>
+        <div style="font-size:16px; font-weight:700; color:#8b5cf6; font-family:'Roboto Slab',serif;">UniCRM</div>
+        <div style="font-size:12px; color:#6b7280; font-family:'Roboto Condensed',sans-serif;">Source of Truth</div>
+      </div>
+    </div>
+    <div style="transform:rotate(1deg);">
+      <div class="sketch-card" style="background:#f0fdf4; border-color:#16a34a; box-shadow:3px 3px 0 #16a34a; text-align:center; min-width:120px;">
+        <div style="font-size:28px;">👩‍💼</div>
+        <div style="font-size:16px; font-weight:700; color:#16a34a; font-family:'Roboto Slab',serif;">Alex</div>
+        <div style="font-size:12px; color:#6b7280; font-family:'Roboto Condensed',sans-serif;">Admin Staff</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 1 -->
+  <div style="display:flex; align-items:flex-start; margin-bottom:32px; position:relative;">
+    <div style="flex:1; padding-right:40px;">
+      <div style="transform:rotate(-1.5deg);">
+        <div class="sketch-card" style="background:#f0fdf4; border-color:#16a34a; box-shadow:4px 4px 0 #16a34a;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:28px;">📬</span>
+            <span style="font-size:20px; font-weight:700; color:#16a34a; font-family:'Roboto Slab',serif;">1. Enrolment Opens!</span>
+          </div>
+          <div class="bubble" style="margin-bottom:10px;">"Sweet — time to pick my units for next semester!"</div>
+          <div style="font-size:14px; color:#4b5563; margin-top:14px; font-family:'Roboto',sans-serif; line-height:1.6;">
+            Sam logs into <span class="highlight-blue">DegreeWorks</span> to plan the semester.
+          </div>
+          <div style="margin-top:8px; font-size:13px; color:#16a34a; font-family:'Roboto Condensed',sans-serif; font-weight:700;">😊 Feeling: Excited &amp; organised</div>
+        </div>
+      </div>
+    </div>
+    <div style="width:80px; text-align:center; padding-top:20px; font-size:28px;">→</div>
+    <div style="flex:1;">
+      <div class="dashed-box" style="transform:rotate(1deg); margin-top:20px;">
+        <div style="font-size:12px; font-weight:700; color:#9ca3af; margin-bottom:6px; font-family:'Roboto Condensed',sans-serif; letter-spacing:1px; text-transform:uppercase;">BEHIND THE SCENES</div>
+        <div style="font-size:13px; color:#4b5563; font-family:'Roboto',sans-serif; line-height:1.6;">
+          📋 <span class="highlight-red">UniCRM</span> holds Sam's enrolment conditions.<br/>
+          🖥️ <span class="highlight-yellow">Banner</span> has its own copy… last updated manually… some time ago.
+        </div>
+        <div style="font-size:20px; margin-top:8px;">🤞 They match. Hopefully.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 2 -->
+  <div style="display:flex; align-items:flex-start; margin-bottom:32px; position:relative; flex-direction:row-reverse;">
+    <div style="flex:1; padding-left:40px;">
+      <div style="transform:rotate(1deg);">
+        <div class="sketch-card" style="background:#eff6ff; border-color:#3b82f6; box-shadow:4px 4px 0 #3b82f6;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="font-size:28px;">🔍</span>
+            <span style="font-size:20px; font-weight:700; color:#3b82f6; font-family:'Roboto Slab',serif;">2. Browsing Units</span>
+          </div>
+          <div style="font-size:14px; color:#4b5563; line-height:1.6; font-family:'Roboto',sans-serif;">
+            Sam finds the perfect units. Checks they meet the prerequisites. <span class="highlight-green">All good.</span> Clicks enrol.
+          </div>
+          <div class="bubble" style="margin-top:10px; border-color:#3b82f6; background:#eff6ff;">
+            "I definitely completed the required units. Let's do this!"
+          </div>
+          <div style="margin-top:8px; font-size:13px; color:#3b82f6; font-family:'Roboto Condensed',sans-serif; font-weight:700;">😌 Feeling: Confident</div>
+        </div>
+      </div>
+    </div>
+    <div style="width:80px; text-align:center; padding-top:20px; font-size:28px; transform:scaleX(-1);">→</div>
+    <div style="flex:1;">
+      <div style="transform:rotate(-2deg); margin-top:10px;">
+        <div class="dashed-box">
+          <div style="font-size:12px; font-weight:700; color:#9ca3af; margin-bottom:6px; font-family:'Roboto Condensed',sans-serif; letter-spacing:1px; text-transform:uppercase;">WHAT BANNER SEES</div>
+          <div style="font-size:13px; color:#4b5563; line-height:1.6; font-family:'Roboto',sans-serif;">
+            Banner checks its <span class="highlight-yellow">custom Attributes</span> for Sam's record.<br/>
+            These were entered manually by staff.<br/>
+            <span style="color:#dc2626; font-weight:700;">But the conditions changed in UniCRM 3 weeks ago.</span><br/>
+            Nobody updated Banner. 😬
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 3: SYSTEM FAILURE -->
+  <div style="margin:20px 0 40px; position:relative;">
+    <div style="background:#fef2f2; border:3px solid #dc2626; border-radius:8px; padding:24px 28px; box-shadow:6px 6px 0 #dc2626; transform:rotate(-0.5deg);">
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px; flex-wrap:wrap;">
+        <div class="burst wobble" style="width:80px; height:80px; font-size:13px; text-align:center; line-height:1.2; flex-shrink:0; font-family:'Roboto Condensed',sans-serif; font-weight:700;">
+          SYSTEM FAIL
+        </div>
+        <div>
+          <div style="font-size:26px; font-weight:700; color:#dc2626; font-family:'Roboto Slab',serif;">3. ⛔ Enrolment BLOCKED!</div>
+          <div style="font-size:14px; color:#6b7280; margin-top:2px; font-family:'Roboto',sans-serif;">Sam hits submit and… nothing good happens.</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
+        <div class="sketch-card" style="transform:rotate(1deg); border-color:#dc2626; background:white;">
+          <div style="font-size:22px; margin-bottom:6px;">🖥️</div>
+          <div style="font-size:13px; font-weight:700; color:#dc2626; margin-bottom:4px; font-family:'Roboto Condensed',sans-serif;">What Banner does</div>
+          <div style="font-size:13px; color:#4b5563; font-family:'Roboto',sans-serif; line-height:1.5;">Checks Attributes → finds old condition still active → blocks enrolment</div>
+        </div>
+        <div class="sketch-card" style="transform:rotate(-1.5deg); border-color:#f97316; background:white;">
+          <div style="font-size:22px; margin-bottom:6px;">📋</div>
+          <div style="font-size:13px; font-weight:700; color:#f97316; margin-bottom:4px; font-family:'Roboto Condensed',sans-serif;">What UniCRM says</div>
+          <div style="font-size:13px; color:#4b5563; font-family:'Roboto',sans-serif; line-height:1.5;">Condition was removed 3 weeks ago. Sam is clear to enrol.</div>
+        </div>
+        <div class="sketch-card" style="transform:rotate(1deg); border-color:#8b5cf6; background:white;">
+          <div style="font-size:22px; margin-bottom:6px;">📅</div>
+          <div style="font-size:13px; font-weight:700; color:#8b5cf6; margin-bottom:4px; font-family:'Roboto Condensed',sans-serif;">The Term problem</div>
+          <div style="font-size:13px; color:#4b5563; font-family:'Roboto',sans-serif; line-height:1.5;">Banner applies conditions at Term level. Sam is enrolling in a Part of Term. Mismatch! 23 Parts of Terms exist.</div>
+        </div>
+      </div>
+
+      <div class="mono-error">
+        <span style="color:#6b7280;">system:</span> ERROR — Enrolment condition not met. You are unable to enrol in this unit. [ERR_ATTR_0042]
+      </div>
+
+      <div class="bubble" style="margin-top:20px; border-color:#dc2626; background:white;">
+        "But I DID complete everything! Why is it blocking me?? 😤"
+      </div>
+      <div style="margin-top:10px; font-size:13px; color:#dc2626; font-weight:700; font-family:'Roboto Condensed',sans-serif;">😤 Feeling: Confused → Frustrated → Anxious</div>
+    </div>
+  </div>
+
+  <!-- STAGE 4 + 5 -->
+  <div style="display:flex; gap:20px; margin-bottom:32px; position:relative;">
+    <div style="flex:1;">
+      <div style="transform:rotate(-1.5deg);">
+        <div class="sketch-card" style="background:#fff7ed; border-color:#f97316; box-shadow:4px 4px 0 #f97316;">
+          <div style="font-size:20px; font-weight:700; color:#f97316; margin-bottom:8px; font-family:'Roboto Slab',serif;">4. 📧 Sam Contacts Support</div>
+          <div style="font-size:13px; color:#4b5563; line-height:1.7; font-family:'Roboto',sans-serif;">
+            No self-service fix. No explanation in the error.<br/>
+            Sam emails student services.<br/>
+            <span class="highlight-yellow">It's peak enrolment period.</span><br/>
+            Wait time: unknown. 🕐
+          </div>
+          <div class="bubble" style="margin-top:10px; border-color:#f97316; background:#fff7ed;">
+            "Hi, I'm getting an error when trying to enrol..."
+            <br/><span style="color:#9ca3af; font-size:13px;">[sends 3rd email this week]</span>
+          </div>
+          <div style="margin-top:8px; font-size:13px; color:#f97316; font-family:'Roboto Condensed',sans-serif; font-weight:700;">😟 Feeling: Helpless</div>
+          <div style="margin-top:12px; border-top:1.5px dashed #f97316; padding-top:10px;">
+            <div style="font-size:12px; color:#9ca3af; font-family:'Roboto',sans-serif; line-height:1.7;">
+              ⏱️ Time lost: hours → days<br/>
+              📚 Sam can't finalise study plan<br/>
+              😰 Deadline pressure building
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; color:#9ca3af; font-size:13px;">
+      <div style="font-size:26px;">↔</div>
+      <div>meanwhile</div>
+    </div>
+
+    <div style="flex:1;">
+      <div style="transform:rotate(1.5deg);">
+        <div class="sketch-card" style="background:#f0fdf4; border-color:#16a34a; box-shadow:4px 4px 0 #16a34a;">
+          <div style="font-size:20px; font-weight:700; color:#16a34a; margin-bottom:8px; font-family:'Roboto Slab',serif;">5. 🔎 Alex Investigates</div>
+          <div style="font-size:13px; color:#4b5563; line-height:1.7; font-family:'Roboto',sans-serif;">
+            Admin logs into <span class="highlight-blue">Banner</span>.<br/>
+            Checks Sam's Attributes.<br/>
+            Opens <span class="highlight-red">UniCRM</span> in another tab.<br/>
+            Compares <span class="highlight-yellow">manually</span>.
+          </div>
+          <div style="margin:12px 0; padding:10px 14px; background:#fef9c3; border:2px solid #eab308; border-radius:6px; font-size:13px; color:#713f12; font-family:'Roboto',sans-serif; line-height:1.5;">
+            💡 "Ah — the condition was lifted in UniCRM but nobody updated Banner. They don't talk to each other."
+          </div>
+          <div style="font-size:12px; color:#9ca3af; font-family:'Roboto',sans-serif;">No audit trail. No alert. Just manual detective work.</div>
+          <div style="margin-top:8px; font-size:13px; color:#16a34a; font-family:'Roboto Condensed',sans-serif; font-weight:700;">😩 Feeling: Burdened — this isn't the first time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 6 -->
+  <div style="margin-bottom:32px; position:relative;">
+    <div style="transform:rotate(-0.8deg);">
+      <div class="sketch-card" style="background:#f5f3ff; border-color:#8b5cf6; box-shadow:5px 5px 0 #8b5cf6;">
+        <div style="display:flex; align-items:flex-start; gap:20px; flex-wrap:wrap;">
+          <div style="flex:1;">
+            <div style="font-size:20px; font-weight:700; color:#8b5cf6; margin-bottom:8px; font-family:'Roboto Slab',serif;">6. ✏️ Alex Manually Updates Banner</div>
+            <div style="font-size:13px; color:#4b5563; line-height:1.7; font-family:'Roboto',sans-serif;">
+              Alex removes the stale Attribute from Sam's Banner record.<br/>
+              Notifies Sam to try again.
+            </div>
+            <div style="margin-top:12px; padding:10px 14px; background:#fef2f2; border:2px solid #dc2626; border-radius:6px; font-size:13px; color:#dc2626; line-height:1.6; font-family:'Roboto',sans-serif;">
+              ⚠️ <strong>But wait —</strong> Banner applied the condition at <span class="highlight-yellow">Term level</span>. Sam is enrolling in a <span class="highlight-red">Part of Term</span>. The fix might not even work. And with 23 Parts of Terms… this could fail again.
+            </div>
+          </div>
+          <div style="min-width:160px;">
+            <div style="font-size:12px; font-weight:700; color:#9ca3af; margin-bottom:8px; text-align:center; font-family:'Roboto Condensed',sans-serif; letter-spacing:1px; text-transform:uppercase;">THE STRUCTURAL PROBLEM</div>
+            <div style="background:#e0e7ff; border:2px solid #6366f1; border-radius:6px; padding:8px 12px; text-align:center; font-size:13px; margin-bottom:8px;">
+              📅 TERM (Banner works here)
+            </div>
+            <div style="text-align:center; font-size:18px; color:#6366f1;">↓ contains</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; margin-top:4px;">
+              <div style="background:#fce7f3; border:1.5px solid #f9a8d4; border-radius:4px; padding:3px 4px; text-align:center; font-size:11px; color:#be185d;">PoT 1</div>
+              <div style="background:#fce7f3; border:1.5px solid #f9a8d4; border-radius:4px; padding:3px 4px; text-align:center; font-size:11px; color:#be185d;">PoT 2</div>
+              <div style="background:#fce7f3; border:1.5px solid #f9a8d4; border-radius:4px; padding:3px 4px; text-align:center; font-size:11px; color:#be185d;">...</div>
+              <div style="background:#fce7f3; border:1.5px solid #f9a8d4; border-radius:4px; padding:3px 4px; text-align:center; font-size:11px; color:#be185d;">PoT 22</div>
+              <div style="background:#fce7f3; border:1.5px solid #f9a8d4; border-radius:4px; padding:3px 4px; text-align:center; font-size:11px; color:#be185d;">PoT 23</div>
+              <div style="background:#fecaca; border:1.5px solid #dc2626; border-radius:4px; padding:3px 4px; text-align:center; font-size:11px; color:#dc2626; font-weight:700;">→ Sam</div>
+            </div>
+            <div style="font-size:11px; color:#dc2626; text-align:center; margin-top:6px;">Condition must apply HERE ↑<br/>Banner can't do that.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 7 -->
+  <div style="margin-bottom:40px; position:relative;">
+    <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+      <div style="flex:2; transform:rotate(1deg);">
+        <div class="sketch-card" style="background:#fff7ed; border-color:#f97316; box-shadow:4px 4px 0 #f97316;">
+          <div style="font-size:20px; font-weight:700; color:#f97316; margin-bottom:8px; font-family:'Roboto Slab',serif;">7. 🔄 Sam Tries Again…</div>
+          <div style="font-size:13px; color:#4b5563; line-height:1.7; font-family:'Roboto',sans-serif;">
+            "Alex said to try again."<br/>
+            Sam logs back in. Selects the same units. Holds breath. Clicks enrol.<br/>
+            <br/>
+            <span style="font-size:15px;">Maybe it works. Maybe it doesn't.</span><br/>
+            <span style="color:#dc2626; font-weight:500;">Either way — days have been lost. Trust is gone.</span>
+          </div>
+          <div class="bubble" style="margin-top:12px; border-color:#f97316; background:#fff7ed;">
+            "This happens every semester. Why is this so hard?"
+          </div>
+          <div style="margin-top:8px; font-size:13px; color:#dc2626; font-family:'Roboto Condensed',sans-serif; font-weight:700;">😔 Feeling: Exhausted. Low trust. Dreading next semester.</div>
+        </div>
+      </div>
+      <div style="flex:1;">
+        <div style="transform:rotate(-2deg);">
+          <div class="sketch-card" style="background:#fef2f2; border-color:#dc2626;">
+            <div style="font-size:14px; font-weight:700; color:#dc2626; margin-bottom:8px; font-family:'Roboto Slab',serif;">Even if it works:</div>
+            <div style="font-size:13px; color:#4b5563; line-height:1.9; font-family:'Roboto',sans-serif;">
+              ❌ Days wasted<br/>
+              ❌ Admin time burned<br/>
+              ❌ Other students face same issue<br/>
+              ❌ No permanent fix<br/>
+              ❌ Will repeat next semester
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROOT CAUSES SUMMARY -->
+  <div style="margin-top:20px; background:#1c1917; border-radius:8px; padding:28px 32px; color:#fdf6e3; position:relative;">
+    <div style="font-size:22px; font-weight:700; margin-bottom:20px; text-align:center; font-family:'Roboto Slab',serif;">
+      🔍 Why This Journey Breaks Down
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+      <div style="background:#292524; border-radius:6px; padding:16px; border-left:4px solid #f87171;">
+        <div style="font-size:24px; margin-bottom:6px;">🔗</div>
+        <div style="font-size:16px; font-weight:700; color:#f87171; margin-bottom:6px; font-family:'Roboto Slab',serif;"><span style="font-size:11px; opacity:0.6; font-family:'Roboto Condensed',sans-serif;">#01 </span>No Integration</div>
+        <div style="font-size:13px; color:#d6d3d1; line-height:1.6; font-family:'Roboto',sans-serif;">UniCRM and Banner are disconnected. Changes in one don't flow to the other.</div>
+      </div>
+      <div style="background:#292524; border-radius:6px; padding:16px; border-left:4px solid #fb923c;">
+        <div style="font-size:24px; margin-bottom:6px;">✋</div>
+        <div style="font-size:16px; font-weight:700; color:#fb923c; margin-bottom:6px; font-family:'Roboto Slab',serif;"><span style="font-size:11px; opacity:0.6; font-family:'Roboto Condensed',sans-serif;">#02 </span>Manual = Fragile</div>
+        <div style="font-size:13px; color:#d6d3d1; line-height:1.6; font-family:'Roboto',sans-serif;">Staff must manually re-enter conditions in Banner. Delays and human error are inevitable.</div>
+      </div>
+      <div style="background:#292524; border-radius:6px; padding:16px; border-left:4px solid #c084fc;">
+        <div style="font-size:24px; margin-bottom:6px;">📅</div>
+        <div style="font-size:16px; font-weight:700; color:#c084fc; margin-bottom:6px; font-family:'Roboto Slab',serif;"><span style="font-size:11px; opacity:0.6; font-family:'Roboto Condensed',sans-serif;">#03 </span>Wrong Granularity</div>
+        <div style="font-size:13px; color:#d6d3d1; line-height:1.6; font-family:'Roboto',sans-serif;">Banner's Term-level architecture can't support Part of Term conditions. A structural mismatch.</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:24px; font-size:15px; color:#9ca3af; font-family:'Roboto',sans-serif;">
+      Ellucian Banner as configured is <span style="color:#f87171; font-weight:700; font-size:17px; font-family:'Roboto Slab',serif;">not fit for purpose</span> for this institution's enrolment workflow.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
