@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Castellano para Inmobiliarias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #FDFAF5;
+  --bg2:      #F3EDE1;
+  --bg3:      #E9E0D0;
+  --text:     #1C1714;
+  --text2:    #6B5D52;
+  --text3:    #A8998E;
+  --accent:   #B85C2C;
+  --accent-h: #9A4A22;
+  --olive:    #2D6B4F;
+  --gold:     #8B6914;
+  --border:   #DDD5C8;
+  --border2:  #C8BDB2;
+  --card-bg:  #FFFFFF;
+  --shadow:   rgba(28,23,20,0.07);
+  --tag-bg:   #F3EDE1;
+  --tag-text: #6B5D52;
+  --success-bg: #EDF5F0; --success-text: #1E6640;
+  --info-bg:    #EAF0F8; --info-text:    #1A4A80;
+  --warn-bg:    #FBF3E3; --warn-text:    #7A4F0A;
+  --danger-bg:  #FAE8E3; --danger-text:  #8A2A1A;
+  --radius:   10px;
+  --radius-sm: 6px;
+}
+[data-theme="dark"] {
+  --bg:       #1A1410;
+  --bg2:      #231E18;
+  --bg3:      #2E2820;
+  --text:     #F0E8DC;
+  --text2:    #B8A898;
+  --text3:    #7A6B5E;
+  --accent:   #D4784A;
+  --accent-h: #E08A5C;
+  --olive:    #4A9470;
+  --gold:     #C49A30;
+  --border:   #3A3228;
+  --border2:  #4A4038;
+  --card-bg:  #241E18;
+  --shadow:   rgba(0,0,0,0.3);
+  --tag-bg:   #2E2820;
+  --tag-text: #B8A898;
+  --success-bg: #152A1E; --success-text: #5DB882;
+  --info-bg:    #121D2E; --info-text:    #5A9AE0;
+  --warn-bg:    #2A2010; --warn-text:    #D4A040;
+  --danger-bg:  #2A1210; --danger-text:  #D47060;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+/* ── HEADER ──────────────────────────────────────── */
+.site-header {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 320px; height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 14px,
+    var(--border) 14px,
+    var(--border) 15px
+  );
+  opacity: 0.35;
+}
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.header-controls {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+.site-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.site-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.site-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.site-subtitle {
+  font-size: 13px;
+  color: var(--text2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.site-subtitle span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.site-subtitle span::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── TOP NAV TABS ────────────────────────────────── */
+.tab-nav {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 0.5rem;
+  scrollbar-width: none;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 12px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text3);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  position: relative;
+}
+.tab-btn:hover { color: var(--text2); }
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── CONTROL BUTTONS ─────────────────────────────── */
+.ctrl-btn {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.ctrl-btn:hover { background: var(--border); color: var(--text); }
+
+/* ── MAIN CONTENT ────────────────────────────────── */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+.section { display: none; animation: fadeIn 0.25s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* ── CARDS ───────────────────────────────────────── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.card-sub {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+/* ── ALERT BOXES ─────────────────────────────────── */
+.alert {
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  border-left: 3px solid;
+}
+.alert-warn  { background: var(--warn-bg);    color: var(--warn-text);    border-color: var(--gold); }
+.alert-info  { background: var(--info-bg);    color: var(--info-text);    border-color: var(--olive); }
+.alert-danger{ background: var(--danger-bg);  color: var(--danger-text);  border-color: var(--accent); }
+
+/* ── PHASE GRID ──────────────────────────────────── */
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.phase-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border-top: 3px solid var(--phase-color, var(--accent));
+}
+.phase-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--phase-color, var(--accent));
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.phase-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.phase-months { font-size: 11px; color: var(--text3); margin-bottom: 6px; }
+.phase-title { font-weight: 500; font-size: 15px; margin-bottom: 10px; }
+.phase-list { list-style: none; font-size: 13px; color: var(--text2); }
+.phase-list li { padding: 3px 0 3px 16px; position: relative; }
+.phase-list li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 600; }
+
+/* ── VOCAB SECTION ───────────────────────────────── */
+.vocab-section-header {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  padding: 8px 0 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.vocab-count {
+  background: var(--bg3);
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 11px;
+  color: var(--text3);
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+.vocab-item {
+  background: var(--bg2);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  transition: background 0.15s, transform 0.15s;
+  cursor: default;
+}
+.vocab-item:hover { background: var(--bg3); transform: translateY(-1px); }
+.vocab-item.hidden { display: none; }
+.vocab-es { font-weight: 500; font-size: 14px; color: var(--text); }
+.vocab-en { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.vocab-note { font-size: 11px; color: var(--accent); font-style: italic; margin-top: 3px; }
+
+/* ── VOCAB SEARCH ────────────────────────────────── */
+.vocab-search-wrap {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.vocab-search {
+  width: 100%;
+  padding: 10px 16px 10px 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(184,92,44,0.12); }
+.vocab-search::placeholder { color: var(--text3); }
+.search-icon {
+  position: absolute;
+  left: 14px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--text3);
+  pointer-events: none;
+  font-size: 16px;
+}
+.vocab-no-results {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text3);
+  font-size: 14px;
+  font-style: italic;
+  display: none;
+}
+
+/* ── DIFF TABLE ──────────────────────────────────── */
+.diff-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.diff-table thead th {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text3);
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.diff-table tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.diff-table tbody tr:last-child td { border-bottom: none; }
+.diff-table tbody tr:hover td { background: var(--bg2); }
+.es-term { font-weight: 500; color: var(--accent); }
+.la-term { color: var(--text2); }
+.note-cell { color: var(--text3); font-style: italic; font-size: 12px; }
+
+/* ── PROCESS STEPS ───────────────────────────────── */
+.steps-list { list-style: none; position: relative; padding-left: 0; }
+.steps-list::before {
+  content: '';
+  position: absolute;
+  left: 13px; top: 26px;
+  bottom: 26px;
+  width: 1px;
+  background: var(--border);
+}
+.step-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+  position: relative;
+}
+.step-num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.step-body { flex: 1; padding-top: 3px; }
+.step-title { font-weight: 500; font-size: 14px; color: var(--text); margin-bottom: 4px; }
+.step-desc { font-size: 13px; color: var(--text2); line-height: 1.55; }
+.step-tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.tag-warn    { background: var(--warn-bg);    color: var(--warn-text); }
+.tag-info    { background: var(--info-bg);    color: var(--info-text); }
+.tag-success { background: var(--success-bg); color: var(--success-text); }
+.tag-danger  { background: var(--danger-bg);  color: var(--danger-text); }
+
+/* ── COST GRID ───────────────────────────────────── */
+.cost-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.cost-card {
+  background: var(--bg2);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+.cost-label { font-size: 11px; color: var(--text3); margin-bottom: 4px; }
+.cost-value { font-size: 18px; font-family: 'Playfair Display', serif; font-weight: 600; color: var(--accent); }
+.cost-note { font-size: 11px; color: var(--text3); margin-top: 2px; font-style: italic; }
+
+/* ── DIALOGUES ───────────────────────────────────── */
+.scenario {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px var(--shadow);
+  overflow: hidden;
+}
+.scenario-header {
+  background: var(--bg2);
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.scenario-icon { font-size: 16px; }
+.scenario-body { padding: 16px; }
+.dialogue-line {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.dialogue-line:last-child { margin-bottom: 0; }
+.speaker-tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  min-width: 44px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.sp-agente  { color: var(--info-text); }
+.sp-cliente { color: var(--success-text); }
+.sp-notario { color: var(--warn-text); }
+.line-content { flex: 1; }
+.line-es { font-size: 14px; color: var(--text); line-height: 1.5; }
+.line-tr {
+  font-size: 12px;
+  color: var(--text3);
+  font-style: italic;
+  margin-top: 2px;
+  transition: opacity 0.2s;
+}
+.line-tr.hidden { opacity: 0; pointer-events: none; user-select: none; }
+
+.translate-toggle {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text2);
+}
+.toggle-switch {
+  width: 40px; height: 22px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.toggle-switch.on { background: var(--accent); border-color: var(--accent); }
+.toggle-knob {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 2px; left: 2px;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.toggle-switch.on .toggle-knob { transform: translateX(18px); }
+
+/* ── QUICK PHRASES ───────────────────────────────── */
+.phrases-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.phrase-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 14px;
+  background: var(--bg2);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent);
+}
+.phrase-es { font-size: 14px; font-weight: 500; color: var(--text); }
+.phrase-en { font-size: 12px; color: var(--text3); font-style: italic; }
+
+/* ── RESOURCES ───────────────────────────────────── */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.resource-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: 0 1px 4px var(--shadow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.resource-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow); }
+.resource-type {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.resource-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.resource-desc { font-size: 12px; color: var(--text2); line-height: 1.5; }
+
+/* ── MILESTONES ──────────────────────────────────── */
+.milestone-list { list-style: none; }
+.milestone-item {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.milestone-item:last-child { border-bottom: none; }
+.milestone-month {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--accent);
+  min-width: 72px;
+  flex-shrink: 0;
+}
+.milestone-text { font-size: 13px; color: var(--text2); line-height: 1.55; }
+
+/* ── PRON PAIR ───────────────────────────────────── */
+.pron-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.pron-box { border-radius: var(--radius-sm); padding: 12px 14px; }
+.pron-la { background: var(--bg2); }
+.pron-es { background: var(--info-bg); }
+.pron-label { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); margin-bottom: 6px; }
+.pron-es .pron-label { color: var(--info-text); opacity: 0.7; }
+.pron-content { font-size: 13px; color: var(--text); line-height: 1.9; }
+.pron-es .pron-content { color: var(--info-text); }
+
+/* ── TWO COL ─────────────────────────────────────── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 580px) {
+  .two-col { grid-template-columns: 1fr; }
+  .phase-grid { grid-template-columns: 1fr; }
+  .pron-pair { grid-template-columns: 1fr; }
+  .site-title { font-size: 1.5rem; }
+}
+
+/* ── WEEKLY BOX ──────────────────────────────────── */
+.week-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.week-row:last-child { border-bottom: none; }
+.week-day { font-weight: 500; color: var(--text); min-width: 120px; flex-shrink: 0; }
+.week-task { color: var(--text2); }
+
+/* ── FOOTER ──────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 12px;
+  color: var(--text3);
+  border-top: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="site-eyebrow">Plan de Aprendizaje · Mayo 2026 – Mayo 2027</div>
+        <h1 class="site-title">Castellano para <em>Inmobiliarias</em></h1>
+        <div class="site-subtitle">
+          <span>B1/B2 Latin American Spanish base</span>
+          <span>Real estate &amp; conveyancing focus</span>
+          <span>12-month programme</span>
+        </div>
+      </div>
+      <div class="header-controls">
+        <button class="ctrl-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙 Dark</button>
+        <button class="ctrl-btn" onclick="window.print()">🖨 Print</button>
+      </div>
+    </div>
+    <nav class="tab-nav" role="tablist" aria-label="Learning sections">
+      <button class="tab-btn active" role="tab" onclick="showTab('plan',this)">📋 El Plan</button>
+      <button class="tab-btn" role="tab" onclick="showTab('vocab',this)">📚 Vocabulario</button>
+      <button class="tab-btn" role="tab" onclick="showTab('castellano',this)">🗣 Castellano vs LA</button>
+      <button class="tab-btn" role="tab" onclick="showTab('proceso',this)">📄 El Proceso</button>
+      <button class="tab-btn" role="tab" onclick="showTab('dialogos',this)">💬 Diálogos</button>
+      <button class="tab-btn" role="tab" onclick="showTab('recursos',this)">🔗 Recursos</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════ EL PLAN -->
+<section class="section active" id="sec-plan" role="tabpanel">
+
+  <div class="alert alert-info" style="margin-top:0">
+    <strong>Your advantage at B1/B2:</strong> You already have grammar foundations, rhythm, and vocabulary range. This plan focuses entirely on three things — Castilian register adaptation, property-specific vocabulary, and enough legal-process knowledge to converse confidently with agents and lawyers by May 2027.
+  </div>
+
+  <div class="phase-grid">
+    <div class="phase-card" style="--phase-color:#2D6B4F">
+      <div class="phase-number">01</div>
+      <div class="phase-badge" style="background:var(--success-bg);color:var(--success-text)">Fase 1</div>
+      <div class="phase-months">Mayo – Julio 2026</div>
+      <div class="phase-title">Castilian Foundations</div>
+      <ul class="phase-list">
+        <li>La distinción: c/z pronunciation</li>
+        <li>Vosotros conjugations — active study</li>
+        <li>Key vocab swaps: piso, vale, coger, aparcar</li>
+        <li>Formal register: usted vs tú</li>
+        <li>Core property types vocabulary</li>
+        <li>Daily: 20 min RTVE Radio listening</li>
+      </ul>
+    </div>
+    <div class="phase-card" style="--phase-color:#185FA5">
+      <div class="phase-number">02</div>
+      <div class="phase-badge" style="background:var(--info-bg);color:var(--info-text)">Fase 2</div>
+      <div class="phase-months">Agosto – Octubre 2026</div>
+      <div class="phase-title">Property &amp; Viewing Language</div>
+      <ul class="phase-list">
+        <li>Rooms, finishes, orientation vocab</li>
+        <li>Questions to ask on a viewing</li>
+        <li>Property condition language</li>
+        <li>Reading Idealista listings aloud</li>
+        <li>Dimensions, floor plans, specs</li>
+        <li>Practice: narrate listings as audio</li>
+      </ul>
+    </div>
+    <div class="phase-card" style="--phase-color:#8B6914">
+      <div class="phase-number">03</div>
+      <div class="phase-badge" style="background:var(--warn-bg);color:var(--warn-text)">Fase 3</div>
+      <div class="phase-months">Noviembre 2026 – Enero 2027</div>
+      <div class="phase-title">Legal &amp; Conveyancing</div>
+      <ul class="phase-list">
+        <li>The 11-step buying process</li>
+        <li>Documents: escritura, nota simple, arras</li>
+        <li>Tax acronyms: ITP, IVA, AJD, IBI</li>
+        <li>Roles: notario, abogado, gestor</li>
+        <li>NIE application language</li>
+        <li>Role-play: lawyer consultation</li>
+      </ul>
+    </div>
+    <div class="phase-card" style="--phase-color:#B85C2C">
+      <div class="phase-number">04</div>
+      <div class="phase-badge" style="background:var(--danger-bg);color:var(--danger-text)">Fase 4</div>
+      <div class="phase-months">Febrero – Abril 2027</div>
+      <div class="phase-title">Negotiation &amp; Confidence</div>
+      <ul class="phase-list">
+        <li>Mortgage and financial vocabulary</li>
+        <li>Negotiation phrases and counter-offers</li>
+        <li>Due diligence questions</li>
+        <li>Full dialogue practice scenarios</li>
+        <li>Spanish property YouTube immersion</li>
+        <li>Mock viewing and lawyer roleplay</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Weekly Study Structure — All Phases</div>
+    <div class="two-col">
+      <div>
+        <div class="week-row"><div class="week-day">Mon / Wed / Fri</div><div class="week-task">Anki vocabulary review — 15 min, spaced repetition</div></div>
+        <div class="week-row"><div class="week-day">Tue / Thu</div><div class="week-task">Listening: RTVE Radio, Español con Juan podcast — 20 min</div></div>
+        <div class="week-row"><div class="week-day">Saturday</div><div class="week-task">Browse Idealista.es listings and narrate them aloud in Spanish</div></div>
+        <div class="week-row"><div class="week-day">Sunday</div><div class="week-task">Roleplay a scenario from the Diálogos section</div></div>
+      </div>
+      <div>
+        <div class="week-row"><div class="week-day">Monthly</div><div class="week-task">1× language exchange session with a Spain-based partner (Tandem / HelloTalk) — request property topics</div></div>
+        <div class="week-row"><div class="week-day">Monthly</div><div class="week-task">Review one full section of this guide end-to-end</div></div>
+        <div class="week-row"><div class="week-day">Phase 3+</div><div class="week-task">Join a Spanish property owners group on Facebook to read authentic posts and comments</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ VOCABULARIO -->
+<section class="section" id="sec-vocab" role="tabpanel">
+
+  <div class="vocab-search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="vocab-search" type="search" id="vocabSearch" placeholder="Buscar vocabulario — search terms in Spanish or English…" oninput="filterVocab()" autocomplete="off">
+  </div>
+  <div class="vocab-no-results" id="vocabNoResults">No matching terms found. Try a different search.</div>
+
+  <!-- Property Types -->
+  <div class="vocab-section-header">
+    Tipos de propiedad — Property types
+    <span class="vocab-count" id="count-types">12</span>
+  </div>
+  <div class="vocab-grid" data-cat="types">
+    <div class="vocab-item"><div class="vocab-es">piso</div><div class="vocab-en">apartment / flat</div><div class="vocab-note">Spain's primary term — "departamento" in LA</div></div>
+    <div class="vocab-item"><div class="vocab-es">ático</div><div class="vocab-en">penthouse / top-floor apartment</div></div>
+    <div class="vocab-item"><div class="vocab-es">dúplex</div><div class="vocab-en">duplex (split over two levels)</div></div>
+    <div class="vocab-item"><div class="vocab-es">estudio</div><div class="vocab-en">studio apartment</div></div>
+    <div class="vocab-item"><div class="vocab-es">bajo</div><div class="vocab-en">ground-floor apartment</div></div>
+    <div class="vocab-item"><div class="vocab-es">chalet / villa</div><div class="vocab-en">detached house</div></div>
+    <div class="vocab-item"><div class="vocab-es">chalet adosado</div><div class="vocab-en">terraced house / townhouse</div></div>
+    <div class="vocab-item"><div class="vocab-es">chalet pareado</div><div class="vocab-en">semi-detached house</div></div>
+    <div class="vocab-item"><div class="vocab-es">unifamiliar</div><div class="vocab-en">single-family detached home</div></div>
+    <div class="vocab-item"><div class="vocab-es">finca</div><div class="vocab-en">rural estate / country property</div></div>
+    <div class="vocab-item"><div class="vocab-es">loft</div><div class="vocab-en">loft conversion</div></div>
+    <div class="vocab-item"><div class="vocab-es">local comercial</div><div class="vocab-en">commercial premises</div></div>
+  </div>
+
+  <!-- Features -->
+  <div class="vocab-section-header">
+    Características — Property features
+    <span class="vocab-count" id="count-features">20</span>
+  </div>
+  <div class="vocab-grid" data-cat="features">
+    <div class="vocab-item"><div class="vocab-es">dormitorio / habitación</div><div class="vocab-en">bedroom</div><div class="vocab-note">"recámara" in Mexico</div></div>
+    <div class="vocab-item"><div class="vocab-es">cuarto de baño / baño</div><div class="vocab-en">full bathroom (with shower or bath)</div></div>
+    <div class="vocab-item"><div class="vocab-es">aseo</div><div class="vocab-en">toilet / WC only — no shower</div></div>
+    <div class="vocab-item"><div class="vocab-es">salón-comedor</div><div class="vocab-en">open-plan living/dining room</div></div>
+    <div class="vocab-item"><div class="vocab-es">cocina</div><div class="vocab-en">kitchen</div></div>
+    <div class="vocab-item"><div class="vocab-es">terraza</div><div class="vocab-en">terrace (outdoor space)</div></div>
+    <div class="vocab-item"><div class="vocab-es">balcón</div><div class="vocab-en">balcony</div></div>
+    <div class="vocab-item"><div class="vocab-es">jardín</div><div class="vocab-en">garden</div></div>
+    <div class="vocab-item"><div class="vocab-es">garaje / plaza de parking</div><div class="vocab-en">garage / parking space</div></div>
+    <div class="vocab-item"><div class="vocab-es">trastero</div><div class="vocab-en">storage room</div><div class="vocab-note">"bodega / cuarto de almacenamiento" in LA</div></div>
+    <div class="vocab-item"><div class="vocab-es">piscina</div><div class="vocab-en">swimming pool</div></div>
+    <div class="vocab-item"><div class="vocab-es">ascensor</div><div class="vocab-en">lift / elevator</div></div>
+    <div class="vocab-item"><div class="vocab-es">armario empotrado</div><div class="vocab-en">built-in wardrobe / fitted cupboard</div></div>
+    <div class="vocab-item"><div class="vocab-es">calefacción central</div><div class="vocab-en">central heating (building-wide)</div></div>
+    <div class="vocab-item"><div class="vocab-es">calefacción autónoma</div><div class="vocab-en">individual / self-contained heating</div></div>
+    <div class="vocab-item"><div class="vocab-es">aire acondicionado</div><div class="vocab-en">air conditioning</div></div>
+    <div class="vocab-item"><div class="vocab-es">doble acristalamiento</div><div class="vocab-en">double glazing</div></div>
+    <div class="vocab-item"><div class="vocab-es">tarima flotante</div><div class="vocab-en">laminate / floating floor</div></div>
+    <div class="vocab-item"><div class="vocab-es">parqué</div><div class="vocab-en">solid wood parquet flooring</div></div>
+    <div class="vocab-item"><div class="vocab-es">suelo de gres / cerámica</div><div class="vocab-en">ceramic / porcelain tile flooring</div></div>
+  </div>
+
+  <!-- Description -->
+  <div class="vocab-section-header">
+    Descripción y condición — How properties are described
+    <span class="vocab-count" id="count-desc">15</span>
+  </div>
+  <div class="vocab-grid" data-cat="desc">
+    <div class="vocab-item"><div class="vocab-es">exterior</div><div class="vocab-en">faces the street — desirable in Spain</div></div>
+    <div class="vocab-item"><div class="vocab-es">interior</div><div class="vocab-en">faces interior courtyard</div></div>
+    <div class="vocab-item"><div class="vocab-es">luminoso/a</div><div class="vocab-en">bright / full of natural light</div></div>
+    <div class="vocab-item"><div class="vocab-es">orientación sur / norte</div><div class="vocab-en">south / north facing</div></div>
+    <div class="vocab-item"><div class="vocab-es">vistas al mar / montaña</div><div class="vocab-en">sea / mountain views</div></div>
+    <div class="vocab-item"><div class="vocab-es">superficie útil</div><div class="vocab-en">usable floor area (m²)</div></div>
+    <div class="vocab-item"><div class="vocab-es">superficie construida</div><div class="vocab-en">total built area including walls (m²)</div></div>
+    <div class="vocab-item"><div class="vocab-es">obra nueva</div><div class="vocab-en">new build</div></div>
+    <div class="vocab-item"><div class="vocab-es">segunda mano</div><div class="vocab-en">resale property</div></div>
+    <div class="vocab-item"><div class="vocab-es">reformado/a</div><div class="vocab-en">fully renovated</div></div>
+    <div class="vocab-item"><div class="vocab-es">a reformar</div><div class="vocab-en">needs renovation</div></div>
+    <div class="vocab-item"><div class="vocab-es">llave en mano</div><div class="vocab-en">move-in ready / turnkey</div></div>
+    <div class="vocab-item"><div class="vocab-es">en buen estado</div><div class="vocab-en">in good condition</div></div>
+    <div class="vocab-item"><div class="vocab-es">comunidad de propietarios</div><div class="vocab-en">owners' community (HOA equivalent)</div></div>
+    <div class="vocab-item"><div class="vocab-es">cuota de comunidad</div><div class="vocab-en">monthly community fee</div></div>
+  </div>
+
+  <!-- Legal -->
+  <div class="vocab-section-header">
+    Términos jurídicos — Legal &amp; conveyancing
+    <span class="vocab-count" id="count-legal">18</span>
+  </div>
+  <div class="vocab-grid" data-cat="legal">
+    <div class="vocab-item"><div class="vocab-es">escritura de compraventa</div><div class="vocab-en">deed of sale</div><div class="vocab-note">The definitive legal transfer document</div></div>
+    <div class="vocab-item"><div class="vocab-es">notario/a</div><div class="vocab-en">notary public</div><div class="vocab-note">Mandatory for all Spanish property transactions</div></div>
+    <div class="vocab-item"><div class="vocab-es">registro de la propiedad</div><div class="vocab-en">land registry</div></div>
+    <div class="vocab-item"><div class="vocab-es">nota simple</div><div class="vocab-en">land registry extract</div><div class="vocab-note">Shows ownership, charges, area — always request this first</div></div>
+    <div class="vocab-item"><div class="vocab-es">contrato de arras</div><div class="vocab-en">preliminary contract / deposit agreement</div><div class="vocab-note">Legally binding; 10% deposit — review with lawyer before signing</div></div>
+    <div class="vocab-item"><div class="vocab-es">señal / paga y señal</div><div class="vocab-en">deposit / earnest money</div></div>
+    <div class="vocab-item"><div class="vocab-es">NIE</div><div class="vocab-en">Foreigner's ID Number</div><div class="vocab-note">Required before signing anything in Spain</div></div>
+    <div class="vocab-item"><div class="vocab-es">gestor/a</div><div class="vocab-en">administrative agent / manager</div></div>
+    <div class="vocab-item"><div class="vocab-es">abogado/a</div><div class="vocab-en">lawyer / solicitor</div></div>
+    <div class="vocab-item"><div class="vocab-es">tasación</div><div class="vocab-en">property valuation / survey</div></div>
+    <div class="vocab-item"><div class="vocab-es">cargas</div><div class="vocab-en">charges / encumbrances on the title</div></div>
+    <div class="vocab-item"><div class="vocab-es">libre de cargas</div><div class="vocab-en">free of charges / unencumbered</div></div>
+    <div class="vocab-item"><div class="vocab-es">usufructo</div><div class="vocab-en">right of usufruct / life interest</div></div>
+    <div class="vocab-item"><div class="vocab-es">servidumbre</div><div class="vocab-en">easement / right of way</div></div>
+    <div class="vocab-item"><div class="vocab-es">catastro</div><div class="vocab-en">cadastral registry (tax authority's record)</div></div>
+    <div class="vocab-item"><div class="vocab-es">referencia catastral</div><div class="vocab-en">cadastral reference number</div></div>
+    <div class="vocab-item"><div class="vocab-es">cédula de habitabilidad</div><div class="vocab-en">habitability certificate</div></div>
+    <div class="vocab-item"><div class="vocab-es">certificado energético</div><div class="vocab-en">energy performance certificate</div></div>
+  </div>
+
+  <!-- Taxes -->
+  <div class="vocab-section-header">
+    Impuestos — Taxes (critical vocabulary)
+    <span class="vocab-count" id="count-tax">6</span>
+  </div>
+  <div class="vocab-grid" data-cat="tax">
+    <div class="vocab-item"><div class="vocab-es">ITP</div><div class="vocab-en">Impuesto sobre Transmisiones Patrimoniales</div><div class="vocab-note">Transfer tax on resale properties — 6–10% by region</div></div>
+    <div class="vocab-item"><div class="vocab-es">IVA</div><div class="vocab-en">VAT — applies to new-build properties</div><div class="vocab-note">10% on residential new builds</div></div>
+    <div class="vocab-item"><div class="vocab-es">AJD</div><div class="vocab-en">Actos Jurídicos Documentados — stamp duty</div><div class="vocab-note">~1–1.5%, applies on new build in addition to IVA</div></div>
+    <div class="vocab-item"><div class="vocab-es">IBI</div><div class="vocab-en">Impuesto sobre Bienes Inmuebles — annual council rates</div><div class="vocab-note">Verify vendor is up to date before signing arras</div></div>
+    <div class="vocab-item"><div class="vocab-es">plusvalía municipal</div><div class="vocab-en">Municipal capital gains tax on land value increase</div><div class="vocab-note">Paid by the seller — confirm this in the escritura</div></div>
+    <div class="vocab-item"><div class="vocab-es">comunidad autónoma</div><div class="vocab-en">Autonomous community — regional government sets ITP rate</div></div>
+  </div>
+
+  <!-- Financial -->
+  <div class="vocab-section-header">
+    Financiación — Financial &amp; mortgage terms
+    <span class="vocab-count" id="count-fin">12</span>
+  </div>
+  <div class="vocab-grid" data-cat="fin">
+    <div class="vocab-item"><div class="vocab-es">hipoteca</div><div class="vocab-en">mortgage</div></div>
+    <div class="vocab-item"><div class="vocab-es">entrada</div><div class="vocab-en">down payment / initial deposit</div></div>
+    <div class="vocab-item"><div class="vocab-es">cuota mensual</div><div class="vocab-en">monthly mortgage payment</div></div>
+    <div class="vocab-item"><div class="vocab-es">tipo de interés fijo</div><div class="vocab-en">fixed interest rate</div></div>
+    <div class="vocab-item"><div class="vocab-es">tipo de interés variable</div><div class="vocab-en">variable interest rate</div></div>
+    <div class="vocab-item"><div class="vocab-es">euríbor</div><div class="vocab-en">Euribor — the benchmark rate for variable mortgages</div></div>
+    <div class="vocab-item"><div class="vocab-es">TAE</div><div class="vocab-en">Tasa Anual Equivalente — APR (annual percentage rate)</div></div>
+    <div class="vocab-item"><div class="vocab-es">precio de venta</div><div class="vocab-en">asking price</div></div>
+    <div class="vocab-item"><div class="vocab-es">oferta</div><div class="vocab-en">offer</div></div>
+    <div class="vocab-item"><div class="vocab-es">contraoferta</div><div class="vocab-en">counter-offer</div></div>
+    <div class="vocab-item"><div class="vocab-es">subrogación</div><div class="vocab-en">mortgage transfer / assumption of existing mortgage</div></div>
+    <div class="vocab-item"><div class="vocab-es">gastos de notaría</div><div class="vocab-en">notary fees</div></div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════ CASTELLANO VS LA -->
+<section class="section" id="sec-castellano" role="tabpanel">
+
+  <div class="alert alert-info">
+    <strong>Your Latin American Spanish is your strongest asset.</strong> The differences below are largely phonological and lexical — not grammatical. Spanish professionals will understand you perfectly from day one. Your goal is to understand <em>them</em> and adapt your register to build professional rapport.
+  </div>
+
+  <div class="card">
+    <div class="card-title">La distinción — The key pronunciation difference</div>
+    <div class="card-sub">In mainland Spain (outside southern Andalucía and the Canary Islands), the letters <strong>c</strong> (before e or i) and <strong>z</strong> are pronounced like the English "th" in <em>think</em>. This is called <em>la distinción</em>. It is not a lisp — it is a completely distinct phoneme. The myth that "all Spaniards lisp" confuses this with ceceo, a separate regional phenomenon.</div>
+    <div class="pron-pair">
+      <div class="pron-box pron-la">
+        <div class="pron-label">Latin American</div>
+        <div class="pron-content">
+          precio → "pre-<strong>SYO</strong>"<br>
+          notario → "no-TA-ryo"<br>
+          doce → "DO-se"<br>
+          escritura → "es-kri-TU-ra"
+        </div>
+      </div>
+      <div class="pron-box pron-es">
+        <div class="pron-label">Castilian (Spain)</div>
+        <div class="pron-content">
+          precio → "pre-<strong>THYO</strong>"<br>
+          notario → same (no c/z)<br>
+          doce → "DO-<strong>the</strong>"<br>
+          escritura → same (no c/z)
+        </div>
+      </div>
+    </div>
+    <div class="card-sub" style="margin-bottom:0">Practice words with c/z: <em>precio, plazo, notario, hipoteca, escritura, tasación, avanzado, terraza, plaza</em></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Vosotros — The second-person plural you must master</div>
+    <div class="card-sub">Latin American Spanish uses <em>ustedes</em> for all plural "you" contexts (formal and informal). In Spain, <em>vosotros/vosotras</em> is the informal plural, and <em>ustedes</em> is reserved for formal or distant contexts. In agency offices and informal professional settings you will hear vosotros constantly.</div>
+    <div class="pron-pair">
+      <div class="pron-box pron-la">
+        <div class="pron-label">Latin American</div>
+        <div class="pron-content">
+          ¿Ustedes <strong>quieren</strong> ver el piso?<br>
+          ¿Cuándo <strong>vienen</strong> ustedes?<br>
+          Cuando <strong>lleguen</strong>...
+        </div>
+      </div>
+      <div class="pron-box pron-es">
+        <div class="pron-label">Castilian</div>
+        <div class="pron-content">
+          ¿Vosotros <strong>queréis</strong> ver el piso?<br>
+          ¿Cuándo <strong>venís</strong> vosotros?<br>
+          Cuando <strong>lleguéis</strong>...
+        </div>
+      </div>
+    </div>
+    <div class="card-sub" style="margin-bottom:0;margin-top:8px">Key vosotros endings: <em>-áis / -éis / -ís</em> (present); <em>-asteis / -isteis</em> (preterite); <em>-ad / -ed / -id</em> (imperatives: ¡venid!, ¡esperad!)</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Vocabulary differences — most relevant to property &amp; professional life</div>
+    <div style="overflow-x:auto">
+    <table class="diff-table">
+      <thead>
+        <tr>
+          <th>Castilian (Spain)</th>
+          <th>Latin American equivalent</th>
+          <th>Context &amp; importance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="es-term">piso</td><td class="la-term">departamento / apartamento</td><td class="note-cell">Most common property term in Spain — use this always</td></tr>
+        <tr><td class="es-term">coger el metro / el autobús</td><td class="la-term">tomar el metro</td><td class="note-cell"><em>Coger</em> is completely normal in Spain (to take, catch, grab)</td></tr>
+        <tr><td class="es-term">aparcar</td><td class="la-term">estacionar / parquear</td><td class="note-cell">To park — relevant when discussing parking spaces</td></tr>
+        <tr><td class="es-term">conducir</td><td class="la-term">manejar</td><td class="note-cell">To drive a vehicle</td></tr>
+        <tr><td class="es-term">ordenador / portátil</td><td class="la-term">computadora / laptop</td><td class="note-cell">Computer / laptop — useful in agency settings</td></tr>
+        <tr><td class="es-term">vale / de acuerdo</td><td class="la-term">bueno / está bien / listo</td><td class="note-cell"><em>Vale</em> = OK — heard constantly, use it freely</td></tr>
+        <tr><td class="es-term">venga</td><td class="la-term">(not used this way)</td><td class="note-cell">Extremely common filler: "OK / alright / sounds good / come on"</td></tr>
+        <tr><td class="es-term">a ver</td><td class="la-term">a ver (same)</td><td class="note-cell">Used very frequently in Spain as "let's see / well..." filler</td></tr>
+        <tr><td class="es-term">tío / tía</td><td class="la-term">tipo / chica (informal)</td><td class="note-cell">Informal "guy / girl" — agents use among themselves</td></tr>
+        <tr><td class="es-term">guay</td><td class="la-term">chévere / bacán / chido / chulo</td><td class="note-cell">Informal "great / cool" — younger agents use it</td></tr>
+        <tr><td class="es-term">trastero</td><td class="la-term">bodega / cuarto de almacenamiento</td><td class="note-cell">Storage room — listed on every property spec sheet</td></tr>
+        <tr><td class="es-term">fontanero</td><td class="la-term">plomero</td><td class="note-cell">Plumber — useful when discussing property condition</td></tr>
+        <tr><td class="es-term">hacer puente</td><td class="la-term">fin de semana largo</td><td class="note-cell">Long weekend — relevant for scheduling viewings around Spanish holidays</td></tr>
+        <tr><td class="es-term">comunidad (de propietarios)</td><td class="la-term">condominio (fees)</td><td class="note-cell">Owners' community and the monthly maintenance fee</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Register: how to address agents and lawyers</div>
+    <div style="font-size:13px;color:var(--text2);line-height:1.9">
+      On first contact — always use <strong style="color:var(--text)">usted</strong>. This is respectful and expected in all professional settings in Spain, just as in Latin America.<br>
+      Agents in Spain typically switch to <em>tú</em> more quickly than in Latin America — once they do, reciprocate.<br>
+      With notaries and lawyers — remain in <em>usted</em> throughout the entire professional relationship.<br><br>
+      <strong style="color:var(--text)">Email openings:</strong> <em>"Estimado/a señor/a García:"</em> or <em>"Me dirijo a usted en relación con la propiedad situada en..."</em><br>
+      <strong style="color:var(--text)">Email closings:</strong> <em>"Quedo a su disposición para cualquier consulta."</em> / <em>"En espera de sus noticias, reciba un cordial saludo."</em>
+    </div>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════════════════════ EL PROCESO -->
+<section class="section" id="sec-proceso" role="tabpanel">
+
+  <div class="alert alert-danger">
+    <strong>Critical advice:</strong> Always appoint an <em>independent</em> abogado — not the one recommended by the selling agency. Their duty is to represent <em>you</em>. Budget 1–2% of the purchase price. Never sign a contrato de arras without independent legal review.
+  </div>
+
+  <div class="card">
+    <div class="card-title">El proceso de compra — The 11-step buying process</div>
+    <ol class="steps-list">
+      <li class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Obtener el NIE — Get your Foreigner's ID Number</div>
+          <div class="step-desc">The <em>Número de Identidad de Extranjero</em> is mandatory before signing any contract or paying taxes in Spain. Apply at the Spanish Consulate General in Melbourne — allow 4–6 weeks processing time. Alternatively apply at a Spanish <em>comisaría</em> (police station) with a <em>Jefatura de Extranjería</em> during your scouting trip.</div>
+          <div class="step-tags"><span class="tag tag-danger">Do before your trip</span><span class="tag tag-info">Consulado Melbourne</span></div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Abrir cuenta bancaria española — Open a Spanish bank account</div>
+          <div class="step-desc">Required to pay purchase costs, taxes, and ongoing expenses (IBI, community fees). Recommended banks for non-residents: Santander, BBVA, CaixaBank. Some allow non-resident account opening online with your NIE and passport. You will need this account before completing the purchase.</div>
+          <div class="step-tags"><span class="tag tag-info">Non-resident account</span></div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Buscar propiedades — Property search</div>
+          <div class="step-desc">Main portals: <em>Idealista.es</em>, <em>Fotocasa.es</em>, <em>Habitaclia.es</em> (Catalonia). Estate agents are called <em>agencias inmobiliarias</em> or simply <em>inmobiliarias</em>. Individual agents are <em>agentes inmobiliarios</em>. Commission is typically paid by the vendor in Spain — not the buyer.</div>
+          <div class="step-tags"><span class="tag tag-success">Online research phase</span></div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Visitar propiedades — View properties</div>
+          <div class="step-desc">Your May 2027 trip. Aim to arrange 8–15 viewings to calibrate your market understanding. Say: <em>"Me gustaría concertar una visita para la propiedad de la calle..."</em> Bring a notepad — agents will talk fast. The vocabulary and dialogues in this guide are your toolkit.</div>
+          <div class="step-tags"><span class="tag tag-success">May 2027 trip</span></div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">Hacer una oferta — Make an offer</div>
+          <div class="step-desc">Offers can be verbal initially (<em>oferta verbal</em>). The agent takes your offer to the vendor (<em>vendedor/propietario</em>). Negotiating 5–10% below asking price is normal. A counter-offer is a <em>contraoferta</em>. Nothing is binding at this stage.</div>
+          <div class="step-tags"><span class="tag tag-warn">Negotiate — 5–10% below asking is normal</span></div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <div class="step-title">Contratar un abogado independiente — Appoint your lawyer</div>
+          <div class="step-desc">Do this before signing anything. Your lawyer will obtain and review the <em>nota simple</em>, verify the IBI is paid, check for community debt, assess planning status, and draft or review the <em>contrato de arras</em>. Ask expat communities for recommendations.</div>
+          <div class="step-tags"><span class="tag tag-danger">Critical — do before signing anything</span></div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">7</div>
+        <div class="step-body">
+          <div class="step-title">Firmar el contrato de arras — Sign the preliminary contract</div>
+          <div class="step-desc">Typically 10% of the purchase price is paid as a deposit. Under Spanish law (<em>arras penitenciales</em>): if you (the buyer) withdraw, you forfeit the deposit. If the seller withdraws, they must return <em>el doble</em> — double the deposit. This makes the deal substantively binding.</div>
+          <div class="step-tags"><span class="tag tag-danger">10% deposit — legally binding</span><span class="tag tag-warn">Lawyer review mandatory</span></div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">8</div>
+        <div class="step-body">
+          <div class="step-title">Gestionar la financiación — Arrange financing (if required)</div>
+          <div class="step-desc">Non-residents can typically borrow up to 70% LTV from Spanish banks. The bank requires a <em>tasación</em> (independent valuation). Allow 4–6 weeks for mortgage approval. <em>Subrogación</em> means assuming the vendor's existing mortgage — sometimes advantageous if the rate is good.</div>
+          <div class="step-tags"><span class="tag tag-info">If applying for a mortgage</span></div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">9</div>
+        <div class="step-body">
+          <div class="step-title">Firmar la escritura ante notario — Sign the deed at the notary</div>
+          <div class="step-desc">Both parties sign the <em>escritura pública de compraventa</em> at the notary's office. The balance of the purchase price is paid (typically by <em>cheque bancario</em> — a bank-certified cheque). The notary verifies identities and legality. The keys (<em>llaves</em>) are handed over at this moment.</div>
+          <div class="step-tags"><span class="tag tag-success">Completion day — keys handed over</span></div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">10</div>
+        <div class="step-body">
+          <div class="step-title">Pagar los impuestos — Pay taxes within 30 days</div>
+          <div class="step-desc">For resale (<em>segunda mano</em>): pay <em>ITP</em> within 30 days of signing. For new build (<em>obra nueva</em>): pay <em>IVA</em> (10%) + <em>AJD</em> (1–1.5%). Your <em>gestor</em> or lawyer will handle the tax forms. Missing the 30-day deadline incurs penalties.</div>
+          <div class="step-tags"><span class="tag tag-danger">30-day legal deadline</span></div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">11</div>
+        <div class="step-body">
+          <div class="step-title">Inscribir en el Registro de la Propiedad — Register the title</div>
+          <div class="step-desc">Your lawyer/gestor files the <em>escritura</em> at the land registry (<em>Registro de la Propiedad</em>). Registration typically takes 2–8 weeks. You are the legal owner from the moment of signing, but registration makes your title public record — protecting you against third-party claims.</div>
+          <div class="step-tags"><span class="tag tag-info">Post-completion — handled by gestor</span></div>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Costes aproximados para el comprador — Buyer's cost summary</div>
+    <div class="cost-grid">
+      <div class="cost-card"><div class="cost-label">ITP — resale</div><div class="cost-value">6–10%</div><div class="cost-note">Varies by region — Andalucía 7%, Madrid 6%, Valencia 10%</div></div>
+      <div class="cost-card"><div class="cost-label">IVA + AJD — new build</div><div class="cost-value">11–12%</div><div class="cost-note">10% IVA + ~1–1.5% AJD</div></div>
+      <div class="cost-card"><div class="cost-label">Notary fees</div><div class="cost-value">~0.5–1%</div><div class="cost-note">Gastos de notaría</div></div>
+      <div class="cost-card"><div class="cost-label">Land registry</div><div class="cost-value">~0.2–0.5%</div><div class="cost-note">Gastos de registro</div></div>
+      <div class="cost-card"><div class="cost-label">Lawyer fees</div><div class="cost-value">~1–2%</div><div class="cost-note">Honorarios de abogado</div></div>
+      <div class="cost-card"><div class="cost-label">Agency commission</div><div class="cost-value">Seller pays</div><div class="cost-note">Typically paid by vendor in Spain</div></div>
+    </div>
+    <div style="font-size:13px;color:var(--text2);padding-top:4px">
+      <strong style="color:var(--text)">Total budget for buyer's costs on a resale:</strong> allow <strong style="color:var(--accent)">10–13%</strong> on top of the purchase price. For new builds: <strong style="color:var(--accent)">12–14%</strong>.
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════════════ DIÁLOGOS -->
+<section class="section" id="sec-dialogos" role="tabpanel">
+
+  <div class="translate-toggle">
+    <div class="toggle-switch on" id="translationToggle" onclick="toggleTranslations()" role="switch" aria-checked="true" tabindex="0">
+      <div class="toggle-knob"></div>
+    </div>
+    <span id="toggleLabel">Translations visible — click to hide for practice mode</span>
+  </div>
+
+  <!-- Scenario 1 -->
+  <div class="scenario">
+    <div class="scenario-header"><span class="scenario-icon">🏢</span> Escenario 1: Primera visita a la agencia inmobiliaria</div>
+    <div class="scenario-body">
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">Buenos días. Estoy interesada en comprar una propiedad en esta zona y me gustaría saber qué tienen disponible.</div><div class="line-tr">Good morning. I'm interested in buying a property in this area and I'd like to know what you have available.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">Buenos días, claro. ¿Tiene algún tipo de propiedad en mente? ¿Piso, chalet, ático...?</div><div class="line-tr">Of course. Do you have any particular type of property in mind? Apartment, house, penthouse...?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">Busco un piso de dos o tres dormitorios, preferiblemente con terraza y plaza de garaje incluida. El presupuesto máximo es de trescientos mil euros.</div><div class="line-tr">I'm looking for a 2 or 3 bedroom apartment, ideally with a terrace and parking space included. My maximum budget is €300,000.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">Perfecto. ¿Tiene preferencia de zona o de orientación?</div><div class="line-tr">Great. Do you have a preferred neighbourhood or orientation?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">Preferiblemente orientación sur o este, luminoso y exterior. Y con ascensor, si es posible.</div><div class="line-tr">Preferably south or east facing, bright and street-facing. And with a lift if possible.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">Tenemos varios que se ajustan a lo que busca. ¿Cuándo podría venir a verlos?</div><div class="line-tr">We have several that match what you're looking for. When could you come to view them?</div></div></div>
+    </div>
+  </div>
+
+  <!-- Scenario 2 -->
+  <div class="scenario">
+    <div class="scenario-header"><span class="scenario-icon">🚪</span> Escenario 2: Durante la visita al piso</div>
+    <div class="scenario-body">
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">¿Cuántos metros cuadrados tiene el piso exactamente?</div><div class="line-tr">How many square metres is the apartment exactly?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">Tiene ochenta y cinco metros útiles y noventa y siete construidos.</div><div class="line-tr">It has 85 usable square metres and 97 built.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">¿Y cuánto son los gastos de comunidad mensuales?</div><div class="line-tr">And how much are the monthly community fees?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">Son ciento treinta euros al mes, que incluyen la limpieza del portal, el ascensor y el mantenimiento de la piscina.</div><div class="line-tr">It's €130 per month, which includes the entrance cleaning, lift and pool maintenance.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">¿Cuándo se construyó el edificio? ¿Ha habido alguna reforma reciente?</div><div class="line-tr">When was the building built? Have there been any recent renovations?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">El edificio es de los años noventa, pero se rehabilitó la fachada en dos mil diecinueve y se renovó el ascensor el año pasado.</div><div class="line-tr">The building is from the nineties, but the façade was renovated in 2019 and the lift was replaced last year.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">¿Está libre de cargas? ¿Tiene hipoteca pendiente?</div><div class="line-tr">Is it free of charges? Is there an outstanding mortgage?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">Sí, el propietario canceló la hipoteca el año pasado. Lo puede comprobar usted misma en la nota simple.</div><div class="line-tr">Yes, the owner paid off the mortgage last year. You can verify this yourself in the land registry extract.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">¿Está el IBI al corriente de pago?</div><div class="line-tr">Is the annual council tax (IBI) up to date?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">Sí, podemos facilitarle los últimos recibos.</div><div class="line-tr">Yes, we can provide you with the recent payment receipts.</div></div></div>
+    </div>
+  </div>
+
+  <!-- Scenario 3 -->
+  <div class="scenario">
+    <div class="scenario-header"><span class="scenario-icon">💶</span> Escenario 3: Negociando el precio</div>
+    <div class="scenario-body">
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">El piso me interesa mucho, pero el precio me parece un poco elevado para la zona. ¿Hay margen para negociar?</div><div class="line-tr">I'm very interested in the apartment, but the price seems a little high for the area. Is there room to negotiate?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">Podemos trasladar su oferta al propietario. ¿Qué cantidad tendría usted en mente?</div><div class="line-tr">We can pass your offer on to the owner. What figure did you have in mind?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">Estaría dispuesta a ofrecer doscientos setenta y cinco mil euros, incluyendo la plaza de garaje.</div><div class="line-tr">I would be prepared to offer €275,000, including the parking space.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">De acuerdo, lo consulto con el propietario y le llamo mañana. ¿Me puede dejar un número de contacto?</div><div class="line-tr">Understood. I'll check with the owner and call you tomorrow. Can you leave me a contact number?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Agente</div><div class="line-content"><div class="line-es">[Al día siguiente] El propietario acepta bajar a doscientos ochenta y cinco mil, con la plaza incluida.</div><div class="line-tr">[The next day] The owner agrees to come down to €285,000, with the parking included.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">Necesito consultarlo con mi abogado. Le confirmo antes de mañana por la tarde.</div><div class="line-tr">I need to consult my lawyer. I'll confirm before tomorrow afternoon.</div></div></div>
+    </div>
+  </div>
+
+  <!-- Scenario 4 -->
+  <div class="scenario">
+    <div class="scenario-header"><span class="scenario-icon">⚖️</span> Escenario 4: Primera reunión con el abogado</div>
+    <div class="scenario-body">
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">Buenos días. Me gustaría contratar sus servicios para gestionar la compraventa de un piso en esta ciudad.</div><div class="line-tr">Good morning. I'd like to engage your services to manage the purchase of an apartment in this city.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Abogado</div><div class="line-content"><div class="line-es">Por supuesto. Lo primero que haremos es solicitar la nota simple del Registro de la Propiedad para comprobar la titularidad y si existen cargas o gravámenes.</div><div class="line-tr">Of course. The first thing we'll do is request the land registry extract to verify ownership and check for any charges or encumbrances.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">¿Qué impuestos tendré que pagar como compradora extranjera?</div><div class="line-tr">What taxes will I have to pay as a foreign buyer?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Abogado</div><div class="line-content"><div class="line-es">Al tratarse de una vivienda de segunda mano, pagará el ITP. En esta comunidad autónoma es el ocho por ciento del precio escriturado. También habrá gastos de notaría y de registro.</div><div class="line-tr">Since it's a resale property, you'll pay ITP. In this region it's 8% of the declared purchase price. There will also be notary and registration fees.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">¿Y cuánto son sus honorarios por llevar la operación completa?</div><div class="line-tr">And what are your fees for managing the whole transaction?</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-agente">Abogado</div><div class="line-content"><div class="line-es">Cobramos el uno por ciento del precio de compra más IVA, con un mínimo de mil quinientos euros. Incluye la revisión del contrato de arras, la escritura y la gestión del NIE si aún no lo tiene.</div><div class="line-tr">We charge 1% of the purchase price plus VAT, with a minimum fee of €1,500. This includes reviewing the arras contract, the deed, and NIE management if you don't already have it.</div></div></div>
+      <div class="dialogue-line"><div class="speaker-tag sp-cliente">Tú</div><div class="line-content"><div class="line-es">Perfecto. ¿Puede proporcionarme la nota simple de la propiedad que me interesa?</div><div class="line-tr">Perfect. Can you obtain the land registry extract for the property I'm interested in?</div></div></div>
+    </div>
+  </div>
+
+  <!-- Emergency phrases -->
+  <div class="card">
+    <div class="card-title">Frases de emergencia — Phrases for any difficult moment</div>
+    <div class="phrases-grid">
+      <div class="phrase-item"><div class="phrase-es">¿Podría repetirlo más despacio, por favor?</div><div class="phrase-en">Could you repeat that more slowly, please?</div></div>
+      <div class="phrase-item"><div class="phrase-es">No he entendido bien. ¿Me lo puede explicar de otra manera?</div><div class="phrase-en">I didn't quite understand. Could you explain it differently?</div></div>
+      <div class="phrase-item"><div class="phrase-es">¿Tiene eso por escrito?</div><div class="phrase-en">Do you have that in writing?</div></div>
+      <div class="phrase-item"><div class="phrase-es">Necesito consultarlo con mi abogado antes de decidir.</div><div class="phrase-en">I need to consult my lawyer before deciding.</div></div>
+      <div class="phrase-item"><div class="phrase-es">¿Podría enviarme esa información por correo electrónico?</div><div class="phrase-en">Could you send me that information by email?</div></div>
+      <div class="phrase-item"><div class="phrase-es">¿Cuál es el plazo para firmar el contrato de arras?</div><div class="phrase-en">What is the deadline for signing the preliminary contract?</div></div>
+      <div class="phrase-item"><div class="phrase-es">Todavía no he tomado una decisión definitiva.</div><div class="phrase-en">I haven't made a final decision yet.</div></div>
+      <div class="phrase-item"><div class="phrase-es">¿Puede proporcionarme toda la documentación de la propiedad?</div><div class="phrase-en">Can you provide me with all the property documentation?</div></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ RECURSOS -->
+<section class="section" id="sec-recursos" role="tabpanel">
+
+  <div class="resource-grid">
+    <div class="resource-card"><div class="resource-type">Radio / Podcast</div><div class="resource-name">RTVE Radio Nacional</div><div class="resource-desc">Spain's national public radio. Clear, standard Castilian with no regional accent. Free via the RTVE app or website. Ideal for daily passive listening.</div></div>
+    <div class="resource-card"><div class="resource-type">TV Streaming</div><div class="resource-name">RTVE à la Carta</div><div class="resource-desc">Free streaming of Spanish public television. News bulletins and documentaries deliver standard register. Available outside Spain via the website.</div></div>
+    <div class="resource-card"><div class="resource-type">YouTube</div><div class="resource-name">Español con Juan</div><div class="resource-desc">Castilian-specific Spanish lessons. Also highly recommended: "Dreaming Spanish" for comprehensible input at your B1/B2 level.</div></div>
+    <div class="resource-card"><div class="resource-type">Property Portals</div><div class="resource-name">Idealista.es / Fotocasa.es</div><div class="resource-desc">Browse listings weekly and read property descriptions aloud. The single best vocabulary immersion tool — authentic, current, context-rich language.</div></div>
+    <div class="resource-card"><div class="resource-type">Language Exchange</div><div class="resource-name">Tandem / HelloTalk</div><div class="resource-desc">Connect with Spain-based partners. Specify in your profile that you want to practise property and legal conversation topics. Aim for one session per month minimum.</div></div>
+    <div class="resource-card"><div class="resource-type">Flashcards</div><div class="resource-name">Anki (custom deck)</div><div class="resource-desc">Build a deck from the Vocabulario tab terms. 15 minutes of daily spaced repetition is more effective than long weekly sessions. Free desktop app.</div></div>
+    <div class="resource-card"><div class="resource-type">Property Blog</div><div class="resource-name">Spanish Property Insight</div><div class="resource-desc">English-language guide to buying in Spain. Excellent for building process understanding before tackling the Spanish vocabulary. Read alongside this guide.</div></div>
+    <div class="resource-card"><div class="resource-type">Legal Reference</div><div class="resource-name">Notariado.org</div><div class="resource-desc">Spain's official notary body website. Contains official explanations of the buying process in Spanish — authentic terminology in context. Advanced Phase 3 resource.</div></div>
+    <div class="resource-card"><div class="resource-type">Community</div><div class="resource-name">Expat Facebook Groups</div><div class="resource-desc">"Aussies in Spain", "British Expats in Spain" — authentic buying experiences and terminology in context. A forum for practical questions about the process.</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Hitos de progreso — Monthly milestones</div>
+    <ul class="milestone-list">
+      <li class="milestone-item">
+        <div class="milestone-month">Month 3</div>
+        <div class="milestone-text">Can switch between <em>usted</em> and <em>tú</em> comfortably in professional contexts. Recognise vosotros verb forms when heard without conscious effort. Know and can produce 50+ property-type vocabulary items. Understand the distinction when listening to RTVE.</div>
+      </li>
+      <li class="milestone-item">
+        <div class="milestone-month">Month 6</div>
+        <div class="milestone-text">Can read a full Idealista listing and extract all key information (size, features, orientation, community fees, condition). Can describe a property using correct Castilian terms. Know the basic 11-step buying process and can explain it in Spanish.</div>
+      </li>
+      <li class="milestone-item">
+        <div class="milestone-month">Month 9</div>
+        <div class="milestone-text">Fully comfortable with all tax acronyms (ITP, IVA, AJD, IBI, plusvalía) and can explain what each one means. Can articulate the difference between <em>contrato de arras</em> and <em>escritura pública</em>. Know what questions to ask a lawyer in the first meeting — all in Spanish.</div>
+      </li>
+      <li class="milestone-item">
+        <div class="milestone-month">Month 12</div>
+        <div class="milestone-text">Can conduct a full property viewing in Spanish, ask all relevant questions, make a verbal offer and negotiate, then hold a first meeting with a lawyer to commission due diligence — all in Castilian, without reverting to English. Ready for the May 2027 trip.</div>
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  Castellano para Inmobiliarias &mdash; Plan de Aprendizaje &middot; Mayo 2026 – Mayo 2027 &middot; Built for a B1/B2 Latin American Spanish speaker relocating to Spain
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  document.getElementById('themeToggle').textContent = isDark ? '🌙 Dark' : '☀️ Light';
+}
+
+function filterVocab() {
+  const q = document.getElementById('vocabSearch').value.toLowerCase().trim();
+  const items = document.querySelectorAll('.vocab-item');
+  let totalVisible = 0;
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    if (!q || text.includes(q)) {
+      item.classList.remove('hidden');
+      totalVisible++;
+    } else {
+      item.classList.add('hidden');
+    }
+  });
+  document.getElementById('vocabNoResults').style.display = (q && totalVisible === 0) ? 'block' : 'none';
+}
+
+let translationsVisible = true;
+function toggleTranslations() {
+  translationsVisible = !translationsVisible;
+  const toggle = document.getElementById('translationToggle');
+  const label = document.getElementById('toggleLabel');
+  toggle.classList.toggle('on', translationsVisible);
+  toggle.setAttribute('aria-checked', translationsVisible);
+  label.textContent = translationsVisible
+    ? 'Translations visible — click to hide for practice mode'
+    : 'Practice mode — translations hidden. Click to reveal.';
+  document.querySelectorAll('.line-tr').forEach(el => {
+    el.classList.toggle('hidden', !translationsVisible);
+  });
+}
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.getElementById('themeToggle').textContent = '☀️ Light';
+}
+</script>
+</body>
+</html>
